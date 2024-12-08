@@ -1,0 +1,16 @@
+<label *ngIf="label">
+  {{label | translate}}
+</label>
+
+<ng-select
+  [class]="class"
+  [items]="items"
+  bindValue="value"
+  bindLabel="label"
+  [dropdownPosition]="dropdownPosition ? dropdownPosition : 'bottom'"
+  [closeOnSelect]="true"
+  [searchable]="false"
+  [(ngModel)]="selectedItem"
+  (ngModelChange)="onModelChange()"
+>
+</ng-select>

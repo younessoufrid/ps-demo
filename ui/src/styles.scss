@@ -1,0 +1,203 @@
+/* You can add global styles to this file, and also import other style files */
+//@import '~animate.css/animate.css';
+@import "bootstrap/dist/css/bootstrap.css";
+@import 'ngx-toastr/toastr';
+@import "assets/styles/_font-icon.scss";
+@import "./assets/styles/_font.scss";
+@import "node_modules/@swimlane/ngx-datatable/themes/material.scss";
+@import "@ng-select/ng-select/themes/default.theme.css";
+@import "src/assets/styles/_lib.scss";
+
+
+*{
+   margin:  0px;
+   padding:  0px;
+ }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+  font-family: Barlow, serif;
+}
+
+//Scrolle barre customise
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: blue;
+  border-radius: 5px;
+}
+
+
+
+label {
+  color: blue;
+  display: inline-block;
+  font-size: 0.875rem;
+  font-family: "barlow-medium", Robot, sans-serif;
+}
+
+[type=button]:not(:disabled) {
+  cursor: pointer;
+  box-shadow: none;
+  text-align: center;
+  -webkit-appearance: button;
+}
+
+
+.error, .required {
+  color: red;
+  font-size: 0.8rem;
+}
+
+
+
+// Custom Search
+
+.card-accordion{
+  position: relative;
+  width: 100%;
+  //min-height: 4.5rem;
+  background: #F6F6F8;
+  padding: 1rem;
+  top: 10px;
+
+}
+.btn-action {
+  width: 150px;
+  background-color: blue;
+  color: white;
+  margin-left: calc(var(--bs-gutter-x) * 0.5);
+  font-family: Barlow, serif;
+  border: none;
+}
+
+.btn-action:hover {
+  background-color: blue;
+  color: white;
+}
+
+
+.table-search-container {
+  padding: 2rem;
+  width: 98%;
+  overflow-x: auto;
+  //height: 600px;
+  border: 1px solid transparent;
+  border-radius: 1px;
+  background-color: #F6F6F8;
+}
+
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: none;
+}
+
+
+// detail
+
+.container h4 {
+  font-family: Barlow;
+  font-weight: bold;
+  color: $blue-color;
+}
+
+app-spinner {
+  position: fixed;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  top:0;
+  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 0.5;
+}
+
+// popup
+
+.confimation-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-family: Barlow, serif;
+}
+.confimation-container header {
+  color: blue;
+  font-size: 20px;
+  font-weight: bold;
+}
+.confimation-container footer {
+  padding-top: 20px;
+  gap: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-confimation {
+  width: 120px;
+  height: 40px;
+  border:1px solid transparent;
+  border-radius: 20px;
+  padding: 5px;
+}
+.btn-confimation:not(.confirme) {
+  background-color: blue;
+  color: white;
+}
+.btn-confimation.confirme:hover {
+  background-color: blue;
+  color: white;
+}
+
+.btn-cancel {
+  width: 150px;
+  margin-left: calc(var(--bs-gutter-x)* 0.5);
+  font-family: Barlow, serif;
+  border: none;
+
+  background-color: #ccc;
+  color: #000;
+}
+
+.btn-cancel:hover {
+  background-color: #aaa;
+}
+
+.disabled-label {
+  pointer-events: none;
+  background-color: gray;
+}
+.spinner {
+  width: 20px;
+  height: 20px;
+}
+.text-red {
+  color: red;
+}
+.ngx-datatable.fixed-header .datatable-header .datatable-header-inner .datatable-header-cell:has(.week-end) {
+  background-color: gray!important;
+}
+
+.ngx-datatable.fixed-row .datatable-scroll .datatable-body-row .datatable-body-cell:has(.week-end) {
+  background-color: gray!important;
+}
+input[type="month"]::-webkit-calendar-picker-indicator {
+  background-color: #f4f4f4;
+  border: none;
+  border-radius: 50%;
+  color: blue !important;
+  font-size: 14px;
+  padding: 8px;
+  cursor: pointer;
+}
+

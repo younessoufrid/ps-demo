@@ -1,0 +1,35 @@
+<div class="container-fluid mb-2">
+  <custom-filter-saisie
+    (searchByFilters)="searchByFilters($event)"
+    [saleSites]="filtersData.saleSites"
+    [cdrs]="filtersData.cdrs"
+    [clients]="filtersData.clients"
+    [affairs]="filtersData.affairs"
+    [orders]="filtersData.orders"
+    [isSummary]="true"
+  ></custom-filter-saisie>
+</div>
+<div class="container-fluid mb-2">
+  <psv-summary-table *ngIf="totalRows && rowsToShow"
+                     [rows]="rowsToShow"
+                     [columns]="columns"
+                     [totalRows]="totalRows"
+                     [days]="days"
+                     [rowsPerPage]="rowsPerpage"
+                     [currentPage]="currentPage"
+                     [headerHeight]="60"
+                     [rowHeight]="40"
+                     [footerHeight]="60"
+                     [expend]="expend"
+                     (pageChange)="pageChange($event)">
+  </psv-summary-table>
+  <div *ngIf="totalRows && rowsToShow"  class="card-accordion">
+          <div class="row justify-content-end">
+            <button *ngIf="!isOrderSoumis" class="btn btn-action" (click)="validateMonthQuantity()" >{{ 'SUMMARY.VALIDATION_BTN' | translate }}
+            </button>
+             <button class="btn btn-action" (click)="expend = !expend" >{{ expend ? ('SUMMARY.SHRINK' | translate ): ('SUMMARY.EXPAND_BTN' | translate) }}
+          </button>
+          </div>
+  </div>
+</div>
+

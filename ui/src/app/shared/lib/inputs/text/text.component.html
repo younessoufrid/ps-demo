@@ -1,0 +1,100 @@
+<div class="app-text">
+  <!-- label -->
+  <label *ngIf="label" [for]="'app-text-' + id | lowercase">
+    <span>{{ label | translate}}</span>
+    <!-- required -->
+        <span *ngIf="required" class="required"> * </span>
+    <i
+      *ngIf="tooltipText"
+      class="icon-info-fill text-ultramarine"
+      [placement]="placement !== '' ? placement : 'top'"
+      ngbTooltip="{{ tooltipText }}"
+      style="background: none"
+    >
+    </i>
+  </label>
+
+  <div class="input-wrapper">
+    <!-- text -->
+    <input
+      #inputText
+      [id]="'app-text-' + id | lowercase"
+      [placeholder]="placeholder | translate"
+      [type]="type"
+      [(ngModel)]="value"
+      [attr.disabled]="ngControl?.disabled || disable ? '' : null"
+      (change)="onModelChange(inputText.value)"
+      (input)="checkValue()"
+      [autocomplete]="autocomplete"
+      class="form-control"
+      [ngClass]="{hasError: hasError || (ngControl.control.invalid
+      && (ngControl.control.dirty ||ngControl.control.touched))}"
+    />
+
+    <!-- text btn action -->
+    <span class="action-input">
+       <i
+         class="icon-x"
+         *ngIf="clearable && hasValue"
+         (click)="clearInput()"
+         [id]="'app-text-clear-' + id | lowercase"
+       ></i>
+    </span>
+
+
+
+    <!-- Errors messages for text type text -->
+    <ng-container *ngIf="(!controlMessages && ngControl && ngControl?.dirty && ngControl['errors'])">
+
+
+      <div
+        *ngIf="ngControl['errors']?.required"
+        [id]="'ng-text-error-required-caption' + id | lowercase">
+        <p class="error">
+          <span>{{ 'INPUT.ERROR.REQUIRED' | translate }}</span>
+        </p>
+      </div>
+
+
+      <div
+        *ngIf="ngControl['errors']?.minlength"
+        [id]="'ng-text-error-msg-minlength-' + id | lowercase">
+        <p class="error">
+          <span>{{
+            'INPUT.ERROR.MINLENGTH' | translate: { minlength: minlength }
+            }}</span>
+        </p>
+      </div>
+
+
+      <div
+        *ngIf="ngControl['errors']?.maxlength"
+        [id]="'ng-text-error-msg-maxlength-' + id | lowercase">
+        <p class="input-caption error">
+          <span >{{'INPUT.ERROR.MAXLENGTH' | translate: { maxlength: maxlength }
+            }}</span>
+        </p>
+      </div>
+
+    </ng-container>
+
+
+
+
+    <ng-container *ngIf="(!controlMessages && ngControl?.dirty && !ngControl['errors'])">
+      <div
+        *ngIf="ngControl['errors']?.required"
+        [id]="'ng-text-error-required-caption' + id | lowercase">
+        <p class="error">
+          <span>{{ 'INPUT.ERROR.REQUIRED' | translate }}</span>
+        </p>
+      </div>
+    </ng-container>
+
+
+  </div>
+</div>
+
+
+
+

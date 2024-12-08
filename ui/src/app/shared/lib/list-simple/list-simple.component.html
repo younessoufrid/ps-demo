@@ -1,0 +1,67 @@
+<label *ngIf="label">
+  <span>{{ label | translate }} <span class="required" *ngIf="required">*</span></span>
+  <i
+    *ngIf="tooltipText"
+    class="icon-info-fill text-ultramarine"
+    ngbTooltip="{{ tooltipText }}"
+    style="background: none">
+  </i>
+</label>
+<div [class]="class" #dropdownContainer [id]="id" [ngStyle]="{ 'background-color': disable ? '#ececef' : '' }" (mouseleave)="hideList()">
+  <div class="dropdownApp_value">
+    <div class="dropdownApp_input--field">
+      <input
+        style="text-overflow: ellipsis"
+        type="text"
+        class="pointer"
+        readonly
+        [placeholder]="placeholder | translate"
+        [value]="selectedItem?.label"
+        [disabled]="disable"
+        (click)="showList(); searchInput.focus()"
+      />
+      <div class="searchIcons">
+        <div class="searchIcon" (click)="clearSelectedItem();">
+          <img src="assets/icons/close.svg"/>
+        </div>
+        <div class="searchIcon" (click)="showList(); searchInput.focus()">
+          <img src="assets/icons/down.svg"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdownApp_wrapper">
+    <div [style.display]="enableSearch ? 'hidden' : 'block'" class="dropdownApp_search">
+      <div class="dropdownApp_input--field">
+        <input #searchInput type="text" id="search-dropdownApp" autocomplete="off"
+               placeholder="{{ searchInputPlaceholder | translate }}" (input)="search($event)"/>
+      </div>
+    </div>
+
+    <div class="scrollable20rem">
+      <div *ngFor="let item of items" class="dropdownSimple_item"
+           [class.selected]="item.value === selectedItem?.value">
+        <input
+          type="checkbox"
+          #checkbox
+          (click)="checkItem(item, checkbox.checked)"
+          [value]="selectedItem?.value"
+          id="{{ id+''+item?.label?.trim()}}"
+          [checked]="item?.value === selectedItem?.value"
+        />
+        <label for="{{ id+''+item?.label?.trim()}}" class="checkField w-100">{{ item?.label }}</label>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Errors messages for text type text -->
+<ng-container *ngIf="(ngControl && ngControl['errors'])">
+  <div
+    *ngIf="ngControl['errors']?.required"
+    [id]="'ng-text-error-required-caption' + id | lowercase">
+    <p class="error">
+      <span>{{ 'INPUT.ERROR.REQUIRED' | translate }}</span>
+    </p>
+  </div>
+</ng-container>

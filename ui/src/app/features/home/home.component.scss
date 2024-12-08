@@ -1,0 +1,55 @@
+.logo {
+  //height: 5rem;
+  //width: 10rem;
+  width: 15rem;
+  transform: scale(1.4);
+}
+
+.home:hover {
+  //opacity: 0.9;
+  box-shadow: 0px 0px 5px blue;
+}
+
+.home {
+  width: 250px;
+  height: 100px;
+  background-color: #0000FF;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  text-decoration: none;
+  font-family: Barlow, serif;
+  font-size: 20px
+}
+.home i {
+  margin-right: 5px
+}
+
+.welcome-title {
+  font-family: Barlow, serif;
+  color: blue
+}
+.home-header {
+  display: flex;
+  align-items: center;
+  flex-direction: column
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.home-links {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap
+}
+
+.disabled-link {
+  pointer-events: none;
+  background-color: gray;
+  text-decoration: none;
+}

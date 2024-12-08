@@ -1,0 +1,168 @@
+.dpdvalue {
+  width: 100%;
+  background: #fff;
+  border-radius: 0.625rem;
+  position: relative;
+}
+.dpdvalue.current {
+  box-shadow: 0 3px 10px rgba(204, 206, 220, 0.8);
+}
+.dropdownApp_search--field {
+  font-family: Barlow;
+  width: 100%;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 2.1875rem;
+  border-radius: 0.4rem;
+  border: 0.0625rem solid #ececef;
+  height: 2.2rem;
+}
+
+.dropdownApp_search--field input {
+  font-size: 0.9rem;
+  color: #00008c;
+  padding: 0rem 1.875rem 0rem 0.5rem;
+  outline: none;
+  border: none;
+  background: transparent;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: Barlow;
+  font-weight: 400;
+}
+.dropdownApp_search--field input:disabled {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+.dropdownApp_search--field input:focus {
+  border: solid 1px #00008c;
+  border-radius: 10px;
+}
+
+.dropdownSimple_item {
+  position: relative;
+}
+.dropdownSimple_item i {
+  position: absolute;
+  top: 13px;
+  right: 16px;
+  padding: 3px;
+  color: blue;
+  cursor: pointer;
+}
+.arrow, .dpdvalue .dropdownApp_search--field .arrow {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  cursor: pointer;
+  width: 10%;
+  height: 10%;
+}
+
+.dpdvalue.current .dropdownApp_search--field .arrow img {
+  top: 10px;
+  transform: rotate(180deg);
+}
+
+.dpdvalue .dropdownApp_search--field .arrow img {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 1.5rem;
+  height: 1.3rem;
+  transition: all 0.5s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.dpdvalue.current .dropdownApp_wrapper {
+  display: block;
+}
+
+.dpdvalue .dropdownApp_wrapper {
+  display: none;
+  position: absolute;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(204, 206, 220, 0.8);
+  z-index: 3;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.dropdownApp_search {
+  padding: 0.9375rem 1rem;
+  border-bottom: 0.0625rem solid #cccedc;
+}
+
+
+
+
+
+.dpdvalue .dropdownSimple_item {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+input[type='checkbox'] {
+  caret-color: crimson;
+  display: none;
+}
+
+.checkField {
+  display: inline-block;
+  font-size: 0.875rem !important;
+  font-family: Barlow-medium !important;
+  font-weight: 500 !important;
+  color: #00008c;
+  padding: 0.9375rem 1.5625rem 0.9375rem 2.625rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkField:before {
+  content: '';
+  border: 0.0625rem solid #666d92;
+  background: #f8f8fb;
+  border-radius: 4px;
+  position: absolute;
+  accent-color: #0000CC;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.9375rem;
+  height: 16px;
+  width: 16px;
+}
+
+.checkField:after {
+  content: '\2713';
+  background: #3363cc;
+  border: 0.0625rem solid #00f;
+  border-radius: 0.3125rem;
+  font-family: Material-Design-Iconic-Font;
+  font-size: 0.875rem;
+  text-align: center;
+  line-height: 0.75rem;
+  color: #fff;
+  opacity: 0;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.9375rem;
+  height: 16px;
+  width: 16px;
+}
+input[type='checkbox']:checked + .checkField:after {
+  opacity: 1;
+}
+
+
+.error, .required {
+  color: red;
+  font-size: 0.8rem;
+}

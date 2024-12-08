@@ -1,0 +1,42 @@
+default:
+  image: node:18-alpine
+
+stages:
+  - dependencies
+  - build
+
+variables:
+  APP_OUTPUT_PATH: "$CI_PROJECT_DIR/dist"
+
+install:
+  stage: dependencies
+  script:
+    - npm install --prefer-offline
+  cache:
+    key:
+      files:
+        - package.json
+    paths:
+      - node_modules
+  only:
+    - dev
+
+build:
+  stage: build
+  needs: ["install"]
+  before_script:
+    - npm i @angular/cli@16.2.0
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - $APP_OUTPUT_PATH
+  cache:
+    key:
+      files:
+        - package.json
+    paths:
+      - node_modules
+    policy: pull
+  only:
+    - dev

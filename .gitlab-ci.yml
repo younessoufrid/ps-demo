@@ -1,0 +1,17 @@
+stages:
+  - build
+
+build:
+  image: maven:3.9.1-eclipse-temurin-17
+  stage: build
+#  before_script:
+#    - cp .mvn/settings.xml $HOME/.m2/settings.xml
+  script:
+    - mvn clean package -Pbackend -U -DskipTests=true
+    - touch ps_backend.txt
+  only:
+    - dev
+  artifacts:
+    paths:
+      #- ./**/target/*.jar
+      - ps_backend.txt

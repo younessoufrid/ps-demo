@@ -1,0 +1,142 @@
+{
+  "CDR": "CDR",
+  "CLIENT_NAME": "Nom client commande",
+  "AFFAIRE": "Affaire",
+  "NO_COMMANDE": "N° commande",
+  "REQUIRED_TITLE": "Champs obligatoires",
+  "SEARCH_TITLE": "Recherche...",
+  "VERSION": "Version du projet",
+  "PLACEHOLDER_IDENTIFIAT": "Identifiant",
+  "PLACEHOLDER_PASSWORD": "Mot de passe",
+  "LABEL_PASSWORD": "Mot de passe",
+  "EDITION_LINE_TEXT": "Édition du champs libre",
+  "LABEL_IDENTIFIAT": "Identifiant",
+  "EXPORT": "Exporter",
+  "IMPORT": "Importer",
+  "FILE_UPLOAD_SUCCESS": "Le fichier a été importé avec succès",
+  "FILE_UPLOAD_PARTIAL": "{{successfulLines}} sur {{totalLines}} lignes ont été traitées avec succès.",
+  "ORDER_VALIDATED": {
+    "MESSAGE": "La saisie monsuelle est bien validé pour la commande {{ commande }}",
+    "TOOLTIP": "Commande soumis à l'ADV",
+    "STATE": "Validé"
+  },
+  "RESET": "réinitialiser",
+  "INPUT": {
+      "ERROR": {
+        "REQUIRED": "Champ obligatoire",
+        "MINLENGTH": "Vous devez saisir au moins {{ minlength }} caractères.",
+        "MAXLENGTH": "Vous devez saisir au maximum {{ maxlength }} caractères.",
+        "PATTERNE": "Vous devez respecter la structure {{ pattern }}."
+    }
+  },
+  "CONFIG": {
+    "ERROR": "Une erreur c'est produit lors du chargement du fichier de configuration"
+  },
+  "MENU": {
+    "ICON": {
+      "PROFILE": {
+        "TOOL_TIP": "Mon profile"
+      },
+      "EDIT": {
+        "TOOL_TIP": "Page de saisie"
+      },
+      "RECAP": {
+        "TOOL_TIP": "Page récapitulatif mensuel"
+      },
+      "LOG_OUT": {
+        "TOOL_TIP": "Déconnexion"
+      },
+      "UPLOAD": {
+        "TOOL_TIP": "Page d'importation des données"
+      },
+      "EXPORT": {
+        "TOOL_TIP": "Page d'exportation des données"
+      },
+      "HOME": {
+        "TOOL_TIP": "Page d'accueil"
+      }
+    }
+  },
+  "MESSAGE": {
+    "ERROR": {
+      "ERROR": "erreur",
+      "FILE_ERRORS": "Erreurs de validation du fichier",
+      "INVALID_LOGIN_CREDENTIALS": "Identifiant et/ou mot de passe incorrect",
+      "FORBIDDEN": "Vous n'avez pas l'autorisation d'effectuer cette action.",
+      "SERVER_ERROR": "Oups ! Quelque chose s'est mal passé. Veuillez réessayer plus tard.",
+      "UNEXPECTED_ERROR": "Une erreur inattendue s'est produite.",
+      "CONNECTION_ERROR": "Impossible de se connecter au serveur. Veuillez vérifier votre connexion réseau et réessayer ultérieurement.",
+      "REQUIRED_FIELD": "champs obligatoire",
+      "CSV_LINE_VALIDATION_ERROR": "Ligne {{line}}, Colonne '{{column}}': {{errorMessage}}.",
+      "INVALID_DATE_FORMAT": "Format de date invalide. Format requis : {{format}}",
+      "INVALID_NUMBER_FORMAT": "Format de nombre invalide. Format requis : {{format}}",
+      "NOT_CURRENT_MONTH": "Date invalide. Veuillez vous assurer que la date est dans ce mois-ci."
+    },
+    "WARNING": {
+      "WARNING": "avertissement",
+      "SESSION_EXPIRED": "La session a expiré. Veuillez vous reconnecter."
+    },
+    "VALID": "valide",
+    "INVALID": "invalide"
+  },
+  "TABLE": {
+    "HEADER": {
+       "DESIGNATION": "Désignation",
+       "LINE_TEXT": "Text ligne",
+       "QUANTITY": "Qté",
+       "TOTAL_MONTH": "Total mois",
+       "NET_PRICE_EXCLUDEING_TAX": "Prix net HT",
+       "SALSES_UNIT": "UV",
+       "TRASH": "",
+       "TOTAL_PRICE": "Prix Total",
+      "DISPLAY": "Masquer",
+      "STATUS": "Etat"
+    },
+    "TOTAL_PRICE_MONTH": "Total mois"
+  },
+  "CONFIRMATION": {
+    "HIDING": {
+      "TITLE": "Masquage de la ligne",
+      "BODY": "Voulez-vous masquer la ligne : {{designation}} ?"
+    },
+    "RESETING": {
+      "TITLE": "Suppression de la quntité mensuel",
+      "BODY": "Voulez-vous remettre la quantité de {{designation}} à zéro pour le mois  {{date}} ?"
+    },
+    "RESETING_ALL": {
+      "TITLE": "Suppression de la quntité mensuel de la commande",
+      "BODY": "Voulez-vous mettre à zéro la quantité mensuelle de la commande {{order}} pour le mois {{date}} ?"
+    },
+    "SHOWING_ALL": {
+      "TITLE": "Affichage des lignes masquées",
+      "BODY": "Voulez-vous afficher toutes les lignes de la commande {{order}} qui sont masquées?"
+    },
+    "VALIDATING": {
+      "TITLE": "Validation de la saisie mensuelle",
+      "BODY": "Si vous confirmez, les quantités saisies pour la commande {{order}} pour le mois courant seront transmises à L'ADV, et vous n'aurez plus la possibilité de les modifier"
+    },
+    "BUTTONS": {
+      "CONTINUE": "Continuer",
+      "SAVE": "Sauvegarder",
+      "CANCEL": "Annuler"
+    }
+  },
+  "HOME": {
+    "WELCOME": "Bienvenue",
+    "TITLE": "Portail de saisie des achats",
+    "LINKS": {
+      "SAISIE": "Page de saisie",
+      "UPLOAD": "Upload de fichier",
+      "RECAP": "Récapitulatif mensuel",
+      "EXPORT": "Export de données"
+    }
+  },
+  "UPLOAD": {
+    "DESC": "Vous pouvez télécharger un fichier de quantités pour éviter la saisie manuelle.\n Pour ce faire, votre fichier doit respecter la liste des contrôles d'intégration suivante afin d'éviter toute perte de données :"
+  },
+  "SUMMARY": {
+    "VALIDATION_BTN": "Valider",
+    "EXPAND_BTN": "Etendre",
+    "SHRINK": "Réduire"
+  }
+}

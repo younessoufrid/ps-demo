@@ -1,0 +1,57 @@
+.container-fluid {
+  height: 100%;
+}
+
+.row {
+  height: 100%;
+}
+.aside {
+  position: fixed;
+  display: flex;
+  z-index: 10;
+  width: 3%;
+  min-width: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: blue;
+  height: 100%;
+  padding: 10px 0px;
+  font-size: 30px;
+}
+.icon-group {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.outlet {
+  width: 97%;
+  padding: 0px;
+  margin-left: 3%;
+}
+.outlet-full {
+  width: 100%;
+  padding: 0px;
+}
+i {
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.user-profile {
+  background-color: white;
+  padding: 3px 5px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  cursor: pointer;
+  color: blue;
+  font-size: 18px;
+}
+.version {
+  font-size: 13px;
+  margin: 5px 0px 0px 0px;
+  color: white;
+}

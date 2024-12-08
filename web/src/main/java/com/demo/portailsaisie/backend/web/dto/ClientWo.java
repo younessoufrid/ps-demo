@@ -1,0 +1,14 @@
+package com.demo.portailsaisie.backend.web.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ClientWo {
+    private Long id;
+    private String reference;
+    private String name;
+}

@@ -1,0 +1,122 @@
+<div>
+  <div class="container-fluid mb-2">
+    <custom-filter-saisie
+      (searchByFilters)="searchByFilters($event)"
+      [saleSites]="filtersData.saleSites"
+      [cdrs]="filtersData.cdrs"
+      [clients]="filtersData.clients"
+      [affairs]="filtersData.affairs"
+      [orders]="filtersData.orders"
+      [isSummary]="false"
+    ></custom-filter-saisie>
+  </div>
+
+  <div class="container-fluid mb-2" *ngIf="rowsToShow && rowsToShow.length > 1">
+    <psv-table
+      [rows]="rowsToShow"
+      [columns]="columns"
+      [totalRows]="totalRows"
+      [rowsPerPage]="rowsPerpage"
+      [currentPage]="currentPage"
+      [headerHeight]="40"
+      [rowHeight]="40"
+      [footerHeight]="60"
+      (pageChange)="pageChange($event)"
+      (resetQuantityEmiter)="resetQuantity($event)"
+      (resetCommandeQuantityEmiter)="resetOrderQuantity($event)"
+      (hideLineEmiter)="hideLine($event)"
+      (hideLinesEmiter)="showHidenLines()"
+      (editTextLineEmiter)="editLineText($event)"
+      (rowQuantityEmiter)="updateQuantity($event)">
+    </psv-table>
+  </div>
+
+  <div class="container-fluid mb-2">
+    <div class="card-accordion">
+<!--      <div class="row">-->
+<!--        <button class="btn btn-action" (click)="exportData()">{{ 'EXPORT' | translate }}   <i class="icon-download"></i>-->
+<!--        </button>-->
+<!--      </div>-->
+      <div class="row">
+        <label class="btn btn-action">{{ 'IMPORT' | translate }}
+          <i *ngIf="!currentFileUpload" class="icon-file"></i> <img alt="loadin icon" class="spinner"
+                                                                    src="./assets/images/blue-spinner.gif"
+                                                                    *ngIf="currentFileUpload && this.progress.percentage">
+          <input accept="text/csv" #fileInput (change)="importFile($event)" type="file" name="import-file"
+                 class="input-file">
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--  preview table-->
+  <div>
+    <psv-popup [isPopup]="showFilePreviewPopup">
+      <psv-file-preview-table
+        *ngIf="showFilePreviewPopup"
+        [rows]="filePreviewData"
+        [columns]="filePreviewColumns"
+        [totalRows]="filePreviewData?.length"
+        [rowsPerPage]="8"
+        [headerHeight]="40"
+        [rowHeight]="40"
+        [footerHeight]="60"
+        (pageChange)="pageChange($event)"
+        (resetQuantityEmiter)="resetQuantity($event)"
+        (resetCommandeQuantityEmiter)="resetOrderQuantity($event)"
+        (hideLineEmiter)="hideLine($event)"
+        (hideLinesEmiter)="showHidenLines()"
+        (editTextLineEmiter)="editLineText($event)"
+        (rowQuantityEmiter)="updateQuantity($event)">
+      </psv-file-preview-table>
+      <div class="d-flex justify-content-between flex-column-reverse flex-sm-row">
+        <div class="d-flex align-items-center">
+          <div class="row">
+            <button (click)="uploadCsvData()" [disabled]="isUploading" name="import-file" class="btn btn-action">
+              {{ 'IMPORT' | translate }}
+              <img alt="loading icon" class="spinner"
+                   src="./assets/images/blue-spinner.gif"
+                   *ngIf="isUploading && this.progress.percentage">
+            </button>
+          </div>
+          <div class="row mx-2">
+            <button class="btn btn-cancel" [disabled]="isUploading"
+                   (click)="closeFilePreview()">{{ 'CONFIRMATION.BUTTONS.CANCEL' | translate }}</button>
+          </div>
+        </div>
+        <div
+          class="d-flex align-items-center"
+          *ngIf="validationErrors && validationErrors.length > 0"
+        >
+          <div class="mb-4 d-sm-none">
+            <span
+              class="text-red text-decoration-underline"
+              (click)="showFileValidationErrors()"
+            >
+              {{'MESSAGE.ERROR.FILE_ERRORS' | translate}}
+            </span>
+          </div>
+          <div class="d-none d-sm-flex">
+            <i
+              class="fa-solid fa-circle-exclamation danger-icon"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              [title]="translateService.instant('MESSAGE.ERROR.FILE_ERRORS')"
+              (click)="showFileValidationErrors()"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </psv-popup>
+
+    <!--    errors summary page-->
+    <div class="slide-in-bottom" *ngIf="this.fileValidationErrorsPopup">
+      <img src="assets/icons/close.svg" class="close-button" (click)="closeFileValidationErrors()"/>
+      <div class="mt-4 mx-2 mt-md-0">
+        <div *ngFor="let err of validationErrors">
+          <label class="text-black">{{ err }}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

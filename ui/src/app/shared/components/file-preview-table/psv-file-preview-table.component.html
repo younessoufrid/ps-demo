@@ -1,0 +1,80 @@
+<div class="table-container">
+  <ngx-datatable
+    id="workflow-datatable"
+    class="material"
+    [rows]="rowsToShow"
+    [columnMode]="ColumnMode.force"
+    [columns]="columns"
+    [reorderable]="false"
+    [headerHeight]="headerHeight"
+    [footerHeight]="footerHeight"
+    [rowHeight]="rowHeight"
+    [loadingIndicator]="loadingIndicator"
+    [scrollbarH]="scrollbarH"
+    [scrollbarV]="scrollbarV">
+
+    <ng-container *ngFor="let col of columns">
+      <ngx-datatable-column
+        *ngIf="col.prop === 'status'"
+        [sortable]="false"
+        [minWidth]="100"
+        [resizeable]="true">
+
+        <ng-template ngx-datatable-header-template>
+          <span *ngIf="col.name" class="datatable-header-cell-label  draggable fw-bold ">
+            {{ col.name }}
+          </span>
+        </ng-template>
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          <span *ngIf="!row.status" class="text-danger fs-6">{{ 'MESSAGE.INVALID' | translate }}</span>
+          <span *ngIf="row.status" class="text-success fs-6">{{ 'MESSAGE.VALID' | translate }}</span>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column
+        [sortable]="false"
+        [minWidth]="100"
+        [resizeable]="true"
+        *ngIf="col.prop !== 'status'">
+
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          <div class="flex-start">
+            <i
+              *ngIf="row[col.prop].validationError"
+              class="fa-solid fa-circle-exclamation text-red"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              [title]="row[col.prop].validationError"
+            ></i>
+            {{ row[col.prop].value }}
+          </div>
+        </ng-template>
+        <ng-template ngx-datatable-header-template>
+          <span *ngIf="col.name" class="datatable-header-cell-label  draggable fw-bold ">
+            {{ col.name }}
+          </span>
+        </ng-template>
+      </ngx-datatable-column>
+    </ng-container>
+
+    <ngx-datatable-footer id="workflow-datatable-footer">
+      <ng-template ngx-datatable-footer-template>
+        <div class="pager-container">
+          <div class="pager-pagination">
+            <datatable-pager
+              [pagerLeftArrowIcon]="'icon-chevron-left'"
+              [pagerRightArrowIcon]="'icon-chevron-right'"
+              [pagerNextIcon]="'icon-chevrons-right'"
+              [pagerPreviousIcon]="'icon-chevrons-left'"
+              [page]="currentPage"
+              [size]="rowsPerPage"
+              [count]="totalRows"
+              [hidden]="!((totalRows / rowsPerPage) > 1)"
+              (change)="onPage($event)">
+            </datatable-pager>
+          </div>
+        </div>
+      </ng-template>
+    </ngx-datatable-footer>
+  </ngx-datatable>
+</div>

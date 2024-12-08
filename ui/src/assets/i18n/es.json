@@ -1,0 +1,121 @@
+{
+  "CDR": "CDR",
+  "CLIENT_NAME": "Nombre del pedido del cliente",
+  "AFFAIRE": "Amorío",
+  "NO_COMMANDE": "N° orden",
+  "REQUIRED_TITLE": "campos obligatorios",
+  "SEARCH_TITLE": "Investigación...",
+  "VERSION": "Versión del proyecto",
+  "PLACEHOLDER_IDENTIFIAT": "Identificador",
+  "EDITION_LINE_TEXT": "Edición de campo gratuita",
+  "PLACEHOLDER_PASSWORD": "Contraseña",
+  "LABEL_PASSWORD": "Contraseña",
+  "LABEL_IDENTIFIAT": "Identificador",
+  "EXPORT": "Exportar",
+  "IMPORT": "Importar",
+  "FILE_UPLOAD_SUCCESS": "El archivo fue importado exitosamente",
+  "FILE_UPLOAD_PARTIAL": "{{successfulLines}} de {{totalLines}} lines fueron procesadas exitosamente.",
+  "RESET": "reset",
+  "INPUT": {
+    "ERROR": {
+      "REQUIRED": "campo obligatorio",
+      "MINLENGTH": "Debe ingresar al menos {{ minlength }} caracteres.",
+      "MAXLENGTH": "Debe ingresar como máximo {{ maxlength }} caracteres.",
+      "PATTERNE": "Debes respetar la estructura {{ patrón }}."
+    }
+  },
+  "CONFIG": {
+    "ERROR": "Se produjo un error al cargar el archivo de configuración."
+  },
+  "MENU": {
+    "ICON": {
+      "PROFILE": {
+        "TOOL_TIP": "Mi perfil"
+      },
+      "EDIT": {
+        "TOOL_TIP": "Página de entrada"
+      },
+      "RECAP": {
+        "TOOL_TIP": "Página de resumen mensual"
+      },
+      "LOG_OUT": {
+        "TOOL_TIP": "Desconectar"
+      },
+      "UPLOAD": {
+        "TOOL_TIP": "Página de importación de datos"
+      },
+      "EXPORT": {
+        "TOOL_TIP": "Página de exportación de datos"
+      },
+      "HOME": {
+        "TOOL_TIP": "Pagina de inicio"
+      }
+    }
+  },
+  "MESSAGE": {
+    "ERROR": {
+      "ERROR": "error",
+      "FILE_ERRORS": "Errores de validación del archivo",
+      "INVALID_LOGIN_CREDENTIALS": "Nombre de usuario o contraseña incorrectos",
+      "FORBIDDEN": "No tienes permiso para realizar esta acción.",
+      "SERVER_ERROR": "¡Ups! Algo salió mal. Por favor, inténtalo de nuevo más tarde.",
+      "UNEXPECTED_ERROR": "Se produjo un error inesperado.",
+      "CONNECTION_ERROR": "No se puede conectar al servidor. Por favor, compruebe su conexión de red e inténtelo de nuevo más tarde.",
+      "CSV_LINE_VALIDATION_ERROR": "línea {{line}}, columna '{{column}}': {{errorMessage}}.",
+      "INVALID_DATE_FORMAT": "Formato de fecha no válido. Formato requerido: {{format}}",
+      "INVALID_NUMBER_FORMAT": "Formato de número no válido. Formato requerido: {{format}}",
+      "NOT_CURRENT_MONTH": "Fecha no válida. Por favor, asegúrate de que la fecha esté dentro de este mes."
+    },
+    "WARNING": {
+      "WARNING": "advertencia",
+      "SESSION_EXPIRED": "La sesión ha expirado. Por favor, inicie sesión nuevamente."
+    },
+    "VALID": "válido",
+    "INVALID": "inválido"
+  },
+  "TABLE": {
+    "HEADER": {
+      "DESIGNATION": "Designación",
+      "LINE_TEXT": "línea de texto",
+      "QUANTITY": "Cantidad",
+      "TOTAL_MONTH": "mes total",
+      "NET_PRICE_EXCLUDEING_TAX": "Precio neto sin impuestos",
+      "SALSES_UNIT": "US",
+      "TRASH": "",
+      "TOTAL_PRICE": "Precio total",
+      "DISPLAY": "Esconder"
+    },
+    "TOTAL_PRICE_MONTH": "mes total"
+  },
+  "CONFIRMATION": {
+    "HIDING": {
+      "TITLE": "Ocultando la línea",
+      "BODY": "Quieres ocultar la línea?"
+    },
+    "RESETING": {
+      "TITLE": "Eliminación de la cantidad de pedido mensual.",
+      "BODY": "¿Quisiera restablecer la cantidad para {{designation}} para este mes?"
+    },
+    "SHOWING_ALL": {
+      "TITLE": "Mostrando líneas ocultas",
+      "BODY": "¿Quieres mostrar todas las filas que están ocultas?"
+    },
+    "BUTTONS": {
+      "CONTINUE": "seguir",
+      "CANCEL": "anular"
+    }
+  },
+  "HOME": {
+    "WELCOME": "Bienvenido",
+    "TITLE": "Portail de saisie des achats",
+    "LINKS": {
+      "SAISIE": "Página de entrada",
+      "UPLOAD": "Subir archivo",
+      "RECAP": "Resumen mensual",
+      "EXPORT": "Exportación de datos"
+    }
+  },
+  "UPLOAD": {
+    "DESC": "Puede cargar un archivo de cantidades para evitar la entrada manual.\nPara hacer esto, su archivo debe cumplir con la siguiente lista de controles de integración para evitar la pérdida de datos:"
+  }
+}

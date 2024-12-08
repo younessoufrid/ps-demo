@@ -1,0 +1,47 @@
+.page-not-found {
+  background-color: #FFFFFF;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.not-found-info{
+  font-family: Barlow;
+}
+.not-found-info i {
+  font-size: 12rem;
+  color: blue;
+  display: flex;
+  justify-content: center;
+}
+.p-inaccess {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  padding-bottom: 0.625rem;
+  color: #00008c;
+  line-height: 135%;
+}
+.p-intorized {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 145%;
+  margin: 10px 0px;
+  letter-spacing: 0.01em;
+  color: #666D92;
+}
+.btn-retour {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  border-radius: 20px;
+}

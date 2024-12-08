@@ -1,0 +1,12 @@
+<div class="confimation-container">
+  <header>
+    <p>{{'EDITION_LINE_TEXT' | translate}}</p>
+  </header>
+  <main>
+    <textarea class="line-text" #text [value]="value" (input)="stateChanged(text.value)" name="line-text" ></textarea>
+  </main>
+  <footer>
+    <button class="btn btn-confimation confirme" [disabled]="disable"   (click)="activeModal.close({response: true, value: text.value})">{{'CONFIRMATION.BUTTONS.SAVE'| translate }}</button>
+    <button class="btn btn-confimation"  (click)="activeModal.close({response: false, value: text.value})">{{'CONFIRMATION.BUTTONS.CANCEL'| translate }}</button>
+  </footer>
+</div>

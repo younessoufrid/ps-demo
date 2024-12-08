@@ -1,0 +1,48 @@
+<label *ngIf="label">
+  <span>{{ label | translate }} <span class="required" *ngIf="required">*</span></span>
+  <i
+    *ngIf="tooltipText"
+    class="icon-info-fill text-ultramarine"
+    ngbTooltip="{{ tooltipText }}"
+    style="background: none">
+  </i>
+</label>
+<div [class]="class" [id]="id" [ngStyle]="{ 'background-color': disable ? '#ececef' : '' }" (mouseleave)="hideList()">
+  <div class="dropdownApp_value">
+    <div class="dropdownApp_input--field">
+      <input
+        style="text-overflow: ellipsis"
+        type="text"
+        class="pointer"
+        readonly
+        [placeholder]="placeholder | translate"
+        [value]="currentMonthName +' - '+ selectedItem?.year"
+        [disabled]="disable"
+        (click)="showList()"
+      />
+      <div class="searchIcons">
+        <div class="searchIcon" (click)="showList()">
+          <i class="icon-calendar"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dropdownApp_wrapper">
+    <div class="scrollable20rem">
+      <div class="row mt-2 justify-content-end w-100" >
+        <select  (change)="setYear($event)">
+          <option [selected]="year === currentYear ? 'selected': ''" [value]="year" *ngFor="let year of years">{{ year }}
+          </option>
+        </select>
+      </div>
+      <div class="row mt-2 w-100">
+        <div class="item-months-container">
+          <div *ngFor="let item of months">
+            <span id="month-item" class="checkField" [ngClass]="{'selected': item.value === selectedItem.month, 'disable': Number(selectedItem.year) === currentYear && item.value > currentMonth}" (click)="hideList(); setMonth(item.value)">{{ item?.label}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

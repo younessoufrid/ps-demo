@@ -1,0 +1,49 @@
+<div class="ct">
+  <label>{{ label | translate }}<span *ngIf="required" class="required"> * </span></label>
+  <div *ngIf="simpleDatePicker" class="date-container">
+    <div class="input-date">
+      <div ngbDropdown id="dateDropdown">
+        <input
+          type="button"
+          class="form-control"
+          [id]="'dateDropdown'"
+          [value]="(date?.day < 10 ? '0' + date?.day: date?.day) + '/' + (date?.month < 10 ? '0' + date?.month: date?.month) + '/' + date?.year"
+          [disabled]="disable"
+          ngbDropdownToggle
+          #ngbDropdown
+        />
+        <div ngbDropdownMenu aria-labelledby="dateDropDown">
+          <ngb-datepicker
+            #dp
+            [displayMonths]="1"
+            [startDate]="date"
+            [dayTemplate]="t"
+            (dateSelect)="onDateSelection($event); ngbDropdown.click()"
+            [outsideDays]="'hidden'"
+            [maxDate]="maxDate"
+            [minDate]="minDate"
+          >
+          </ngb-datepicker>
+          <ng-template #t let-dateRef="date">
+            <button
+              class="custom-day"
+              [class.selected]="date?.day === dateRef.day && date?.month === dateRef.month && date?.year === dateRef.year"
+              (click)="dp.navigateTo(dateRef)">
+              {{ dateRef.day }}
+            </button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Errors messages for text type text -->
+<ng-container *ngIf="(ngControl && ngControl?.dirty && ngControl['errors'])">
+  <div
+    *ngIf="ngControl['errors']?.required"
+    [id]="'ng-text-error-required-caption' + id | lowercase">
+    <p class="error">
+      <span>{{ 'INPUT.ERROR.REQUIRED' | translate }}</span>
+    </p>
+  </div>
+</ng-container>

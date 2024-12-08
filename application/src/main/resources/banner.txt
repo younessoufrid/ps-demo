@@ -1,0 +1,8 @@
+${AnsiColor.BRIGHT_GREEN},------. ,-----. ,------.,--------. ,---.  ,--.,--.     ,---.   ,---.  ,--. ,---. ,--.,------.
+${AnsiColor.BRIGHT_GREEN}|  .--. '  .-.  '|  .--. '--.  .--'/  O  \ |  ||  |    '   .-' /  O  \ |  |'   .-'|  ||  .---'
+${AnsiColor.BRIGHT_GREEN}|  '--' |  | |  ||  '--'.'  |  |  |  .-.  ||  ||  |    `.  `-.|  .-.  ||  |`.  `-.|  ||  `--,
+${AnsiColor.BRIGHT_GREEN}|  | --''  '-'  '|  |\  \   |  |  |  | |  ||  ||  '--. .-'    |  | |  ||  |.-'    |  ||  `---.
+${AnsiColor.BRIGHT_GREEN}`--'     `-----' `--' '--'  `--'  `--' `--'`--'`-----' `-----'`--' `--'`--'`-----'`--'`------'
+${AnsiColor.BRIGHT_GREEN} Spring Boot version ${spring-boot.version}
+${AnsiColor.BRIGHT_GREEN} Application name ${application.name}
+${AnsiColor.BRIGHT_GREEN} Application version ${application.version}

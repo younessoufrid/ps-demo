@@ -1,0 +1,12 @@
+<div class="confimation-container">
+  <header>
+    <p>{{getTitle}}</p>
+  </header>
+  <main>
+    <span>{{getBody}}</span>
+  </main>
+  <footer>
+    <button class="btn btn-confimation confirme" (click)="activeModal.close(true)">{{'CONFIRMATION.BUTTONS.CONTINUE'| translate }}</button>
+    <button class="btn btn-confimation" (click)="activeModal.close(false)">{{'CONFIRMATION.BUTTONS.CANCEL'| translate }}</button>
+  </footer>
+</div>

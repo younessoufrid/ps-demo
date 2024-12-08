@@ -1,0 +1,111 @@
+<div class="card-accordion">
+  <form [formGroup]="formGroup">
+    <div class="row">
+      <div class="col-md-3">
+        <app-list-simple
+          formControlName="saleSite"
+          [id]="'saleSite'"
+          [placeholder]="'Business Unit'"
+          [label]="'BU'"
+          [items]="saleSites"
+          [searchInputPlaceholder]="'SEARCH_TITLE'"
+          [enableSearch]="true"
+          [required]="false"
+          [maxItemsShow]="10"
+        ></app-list-simple>
+      </div>
+      <div class="col-md-3">
+        <app-list-simple
+          formControlName="cdr"
+          [id]="'cdr'"
+          [placeholder]="'CDR'"
+          [label]="'CDR'"
+          [items]="cdrs"
+          [disable]="!filterData.saleSite"
+          [searchInputPlaceholder]="'SEARCH_TITLE'"
+          [enableSearch]="true"
+          [required]="false"
+          [maxItemsShow]="10"
+        ></app-list-simple>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <app-list-simple
+          formControlName="client"
+          name="client"
+          [id]="'nom-client'"
+          [placeholder]="'CLIENT_NAME'"
+          [label]="'CLIENT_NAME'"
+          [items]="clients"
+          [disable]="!filterData.cdr"
+          [searchInputPlaceholder]="'SEARCH_TITLE'"
+          [enableSearch]="true"
+          [required]="false"
+          [autoSelectSingleItem]="true"
+          [maxItemsShow]="10"
+        ></app-list-simple>
+      </div>
+    </div>
+    <div class="row">
+      <!--      <div class="col-md-1 mt-4 text-center">-->
+      <!--        <span>Ou</span>-->
+      <!--      </div>-->
+      <div class="col-md-3">
+        <app-list-simple
+          formControlName="affair"
+          [id]="'filter-affaire'"
+          [placeholder]="'AFFAIRE'"
+          [label]="'AFFAIRE'"
+          [items]="affairs"
+          [disable]="!filterData.cdr"
+          [searchInputPlaceholder]="'SEARCH_TITLE'"
+          [enableSearch]="true"
+          [required]="false"
+          [autoSelectSingleItem]="true"
+          [maxItemsShow]="10"
+        ></app-list-simple>
+      </div>
+      <div class="col-md-5">
+        <app-list-simple
+          formControlName="order"
+          [id]="'numero-commande'"
+          [placeholder]="'NO_COMMANDE'"
+          [label]="'NO_COMMANDE'"
+          [items]="orders"
+          [disable]="!filterData.cdr"
+          [searchInputPlaceholder]="'SEARCH_TITLE'"
+          [enableSearch]="true"
+          [required]="false"
+          [autoSelectSingleItem]="true"
+          [maxItemsShow]="10"
+        ></app-list-simple>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3" *ngIf="!isSummary">
+        <saisie-date-picker
+          formControlName="date"
+          [label]="'Date'"
+          [id]="'date-date'"
+          [simpleDatePicker]="true"
+          [disable]="!filterData.cdr"
+          [defaultDate]="today"
+          [minDate]="minDate"
+          [maxDate]="maxDate"
+          [required]="false">
+        </saisie-date-picker>
+      </div>
+      <div class="col-md-3" *ngIf="isSummary">
+        <psv-list-month
+          formControlName="date"
+          [startYear]="2023"
+          [disable]="!filterData.cdr"
+          [label]="'Mois'"
+          [id]="'month-date'"
+          [required]="false">
+        </psv-list-month>
+      </div>
+    </div>
+  </form>
+</div>

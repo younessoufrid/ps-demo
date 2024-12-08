@@ -1,0 +1,56 @@
+<div id="parent-div">
+
+  <div class="yellow-ball"></div>
+  <div class="blue-border-right"></div>
+  <div class="green-ball"></div>
+
+  <div class="logo">
+    <img src="./assets/images/logo.png" alt="logo" class="logo"/>
+  </div>
+
+
+  <main id="main-login">
+    <form id="form-login" autocomplete="off" [formGroup]="loginForm" (ngSubmit)="login()">
+      <div>
+        <div class="title">
+          <p>Accédez au</p>
+          <span>Portail Saisie</span>
+        </div>
+        <div id="div-identifiant">
+          <app-text
+            formControlName="username"
+            name="username"
+            [label]="'LABEL_IDENTIFIAT'"
+            [id]="'username'"
+            [placeholder]="'PLACEHOLDER_IDENTIFIAT'"
+            [required]="true"
+            [clearable]="true"
+            [disable]="false"
+            [autocomplete]="'off'"
+            [hasError]="isLoginError"
+          ></app-text>
+        </div>
+
+        <div id="div-password">
+          <app-password
+            formControlName="password"
+            name="password"
+            [label]="'LABEL_PASSWORD'"
+            [id]="'password'"
+            [placeholder]="'PLACEHOLDER_PASSWORD'"
+            [required]="true"
+            [clearable]="true"
+            [disable]="false"
+            [autocomplete]="'off'"
+            [hasError]="isLoginError"
+          ></app-password>
+        </div>
+        <p class="error" *ngIf="isLoginError">
+          <span>{{loginError | translate}}</span>
+        </p>
+        <button type="submit" [disabled]="loginForm.invalid" class="btn-connexion">Connexion</button>
+        <button type="button" class="btn-connexion btn-connexion-sso">Connexion en sso</button>
+      </div>
+    </form>
+  </main>
+</div>

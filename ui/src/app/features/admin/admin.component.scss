@@ -1,0 +1,24 @@
+@import "variables";
+.auto-complete-card {
+  background-color: transparent;
+  color: $blue-color;
+  width: 100%;
+  overflow-y: auto;
+  height: 100%;
+  }
+.auto-complete-card > ul {
+  padding: 0px;
+  width: 100%;
+}
+.auto-complete-card > ul > li {
+  padding: 15px 10px;
+  margin: 3px 0px;
+  list-style: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.auto-complete-card > ul > li:hover {
+  background-color: blue;
+  color: white;
+}

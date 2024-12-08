@@ -1,0 +1,41 @@
+<div class="app-search">
+  <!-- label -->
+  <label *ngIf="label" [for]="'portail-search-' + id | lowercase">
+    <span>{{ label | translate}}</span>
+    <span *ngIf="required" class="required"> * </span>
+    <i
+      *ngIf="tooltipText"
+      class="icon-info-fill text-ultramarine"
+      [placement]="placement !== '' ? placement : 'top'"
+      ngbTooltip="{{ tooltipText }}"
+      style="background: none"
+    ></i>
+  </label>
+
+  <div class="input-wrapper">
+    <!-- text -->
+    <input
+      #inputSearch
+      [id]="'portail-search-' + id | lowercase"
+      [placeholder]="placeholder | translate"
+      [type]="type"
+      [disabled]="disable"
+      (search)="search(inputSearch.value)"
+      [autocomplete]="autocomplete"
+      class="form-control input-search"
+    />
+    <!-- text btn action -->
+    <span class="action-input">
+    <i
+      *ngIf="searchable"
+      (click)="search(inputSearch.value)"
+      class="icon-search"
+      [id]="'portail-text-search-' + id | lowercase"></i>
+    </span>
+  </div>
+
+</div>
+
+
+
+

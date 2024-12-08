@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row position-relative" [hidden]="isLoading">
+    <div *ngIf="!hideMenu" class="aside">
+      <span tabindex="0" title="{{'MENU.ICON.PROFILE.TOOL_TIP' | translate}}" ngbTooltip="{{'MENU.ICON.PROFILE.TOOL_TIP' | translate}}" class="user-profile">{{ user }}</span>
+      <div *ngIf="isShowSidebarNavigation()" class="icon-group">
+        <i title="{{'MENU.ICON.HOME.TOOL_TIP' | translate}}" ngbTooltip="{{'MENU.ICON.HOME.TOOL_TIP' | translate}}" [routerLink]="'/portail/accueil'"
+           class="icon-home"></i>
+
+        <i title="{{'MENU.ICON.EDIT.TOOL_TIP' | translate}}" ngbTooltip="{{'MENU.ICON.EDIT.TOOL_TIP' | translate}}" [routerLink]="'/portail/saisie'"
+           class="icon-edit"></i>
+        <i title="{{'MENU.ICON.RECAP.TOOL_TIP' | translate}}" ngbTooltip="{{'MENU.ICON.RECAP.TOOL_TIP' | translate}}" [routerLink]="'/portail/summary'" class="icon-eye"></i>
+        <i title="{{'MENU.ICON.UPLOAD.TOOL_TIP' | translate}}" ngbTooltip="{{'MENU.ICON.UPLOAD.TOOL_TIP' | translate}}" [routerLink]="'/portail/upload'" class="icon-upload"></i>
+        <i title="{{'MENU.ICON.EXPORT.TOOL_TIP' | translate}}" ngbTooltip="{{'MENU.ICON.EXPORT.TOOL_TIP' | translate}}" [routerLink]="'/portail/accueil'" class="icon-download"></i>
+      </div>
+
+      <div>
+        <i tabindex="0"  title="{{'MENU.ICON.LOG_OUT.TOOL_TIP' | translate}}" ngbTooltip="{{'MENU.ICON.LOG_OUT.TOOL_TIP' | translate}}" (click)="logout()" class="icon-log-out"></i>
+        <p tabindex="0" title="{'VERSION' | translate}}" ngbTooltip="{{'VERSION' | translate}}" class="version">{{ version }}</p>
+      </div>
+    </div>
+    <div [class]="hideMenu? 'outlet-full' : 'outlet'">
+      <router-outlet (activate)="checkMenuState()"></router-outlet>
+    </div>
+  </div>
+  <portai-saisie-loading-spinner *ngIf="isLoading"></portai-saisie-loading-spinner>
+</div>

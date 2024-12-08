@@ -1,0 +1,126 @@
+{
+  "CDR": "RC",
+  "CLIENT_NAME": "Customer order name",
+  "AFFAIRE": "Affair",
+  "NO_COMMANDE": "N° Order",
+  "REQUIRED_TITLE": "Required fields",
+  "SEARCH_TITLE": "Research...",
+  "VERSION": "Project version",
+  "PLACEHOLDER_IDENTIFIAT": "Identifier",
+  "EDITION_LINE_TEXT": "Free field editing",
+  "PLACEHOLDER_PASSWORD": "Password",
+  "LABEL_PASSWORD": "Password",
+  "LABEL_IDENTIFIAT": "Identifier",
+  "EXPORT": "Export",
+  "IMPORT": "Import",
+  "FILE_UPLOAD_SUCCESS": "The file was imported successfully",
+  "FILE_UPLOAD_PARTIAL": "{{successfulLines}} out of {{totalLines}} lines were successfully processed.",
+  "RESET": "reset",
+  "INPUT": {
+    "ERROR": {
+      "REQUIRED": "Required field",
+      "MINLENGTH": "You must enter at least {{ minlength }} characters.",
+      "MAXLENGTH": "You must enter at most {{ maxlength }} characters.",
+      "PATTERNE": "You must respect the {{ pattern }} structure."
+    }
+  },
+  "CONFIG": {
+    "ERROR": "An error occurred while loading the configuration file"
+  },
+  "MENU": {
+    "ICON": {
+      "PROFILE": {
+        "TOOL_TIP": "My profile"
+      },
+      "EDIT": {
+        "TOOL_TIP": "Entry page"
+      },
+      "RECAP": {
+        "TOOL_TIP": "Monthly summary page"
+      },
+      "LOG_OUT": {
+        "TOOL_TIP": "Disconnect"
+      },
+      "UPLOAD": {
+        "TOOL_TIP": "Data import page"
+      },
+      "EXPORT": {
+        "TOOL_TIP": "Data export page"
+      },
+      "HOME": {
+        "TOOL_TIP": "Home page"
+      }
+    }
+  },
+  "MESSAGE": {
+    "ERROR": {
+      "ERROR": "error",
+      "FILE_ERRORS": "file validation errors",
+      "INVALID_LOGIN_CREDENTIALS": "incorrect username or password.",
+      "FORBIDDEN": "you do not have permission to perform this action.",
+      "SERVER_ERROR": "Oops! Something went wrong. Please try again later.",
+      "UNEXPECTED_ERROR": "An unexpected error occurred.",
+      "CONNECTION_ERROR": "Unable to connect to the server. Please check your network connection and try again later.",
+      "REQUIRED_FIELD": "Mandatory field",
+      "CSV_LINE_VALIDATION_ERROR": "Line {{line}}, Column '{{column}}': {{errorMessage}}.",
+      "INVALID_DATE_FORMAT": "invalid date format. required format: {{format}}",
+      "INVALID_NUMBER_FORMAT":  "invalid number format. required format: {{format}}",
+      "NOT_CURRENT_MONTH": "Invalid date. Please ensure that the date is within this month."
+    },
+    "WARNING": {
+      "WARNING": "warning",
+      "SESSION_EXPIRED": "The session has expired. Please log in again."
+    },
+    "VALID": "valid",
+    "INVALID": "invalid"
+  },
+  "TABLE": {
+    "HEADER": {
+      "DESIGNATION": "Designation",
+      "LINE_TEXT": "text Line",
+      "QUANTITY": "Qty",
+      "TOTAL_MONTH": "Total month",
+      "NET_PRICE_EXCLUDEING_TAX": "Net price excluding tax",
+      "SALSES_UNIT": "SV",
+      "TRASH": "",
+      "TOTAL_PRICE": "Total price",
+      "DISPLAY": "Hide"
+    },
+    "TOTAL_PRICE_MONTH": "Total month"
+  },
+  "CONFIRMATION": {
+    "HIDING": {
+      "TITLE": "Hiding the line",
+      "BODY": "Do you want to hide the line?"
+    },
+    "RESETING": {
+      "TITLE": "Removal of the monthly quantity",
+      "BODY": "Would you like to reset the quantity for {{designation}} for {{date}} ?"
+    },
+    "RESETING_ALL": {
+      "TITLE": "Removal of the monthly order quantity",
+      "BODY": "Would you like to reset the monthly quantity of order {{order}} for {{date}} ?"
+    },
+    "SHOWING_ALL": {
+      "TITLE": "Showing hidden lines",
+      "BODY": "Do you want to show all rows that are hidden?"
+    },
+    "BUTTONS": {
+      "CONTINUE": "Continue",
+      "CANCEL": "Cancel"
+    }
+  },
+  "HOME": {
+    "WELCOME": "Welcome",
+    "TITLE": "Portail de saisie des achats",
+    "LINKS": {
+      "SAISIE": "Input page",
+      "UPLOAD": "File upload",
+      "RECAP": "Monthly summary",
+      "EXPORT": "Data export"
+    }
+  },
+  "UPLOAD": {
+    "DESC": "You can upload a quantities file to avoid manual entry.\nTo do this, your file must meet the following list of integration controls to avoid data loss:"
+  }
+}

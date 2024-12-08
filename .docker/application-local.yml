@@ -1,0 +1,42 @@
+server:
+  port: 8083
+logging:
+  level:
+    web: debug
+    org:
+      springframework:
+        security: debug
+spring:
+  profiles:
+    test:
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        #      ddl-auto: create
+        default_schema: ps_app
+  datasource:
+    url: jdbc:postgresql://host.docker.internal:5432/ps_db
+    username: ps_user
+    password: ps_pass
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    baseline-on-migrate: true
+    enabled: true
+    schemas: ps_app
+    fail-on-missing-locations: true
+    table: _flyway_history
+
+jwt:
+  timeout: 86400  # (24 heures) 86400
+  private-key:
+    location: keys/private.pem
+  public-key:
+    location: keys/public.pem
+
+application:
+  front:
+    url: http://localhost:7070
