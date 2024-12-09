@@ -40,3 +40,13 @@ jwt:
 application:
   front:
     url: http://localhost:7070
+
+keycloak:
+  auth-server-url: http://keycloak:8080
+  realm: ps_keycloak
+  resource: ps_app
+  public-client: true
+  ssl-required: external
+  use-resource-role-mappings: true
+  bearer-only: true
+  jwt-auth-url: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/token

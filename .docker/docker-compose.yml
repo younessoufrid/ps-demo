@@ -30,5 +30,25 @@ services:
     networks:
       - ps_network
 
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    command: >
+      start-dev
+            --http-port=8080
+            --hostname-strict=false
+    volumes:
+      - keycloak_data:/opt/keycloak/data
+    ports:
+      - "8081:8080"
+    networks:
+      - ps_network
+
+volumes:
+  keycloak_data:
+
 networks:
   ps_network:
